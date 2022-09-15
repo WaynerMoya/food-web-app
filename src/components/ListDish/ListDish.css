@@ -1,0 +1,12 @@
+.list-dishes{
+    display : flex;
+}
+
+.col-dish {
+    padding : 20px; 
+}
+
+.sorry-message{
+    justify-content: center;
+    margin : 20px;
+}
