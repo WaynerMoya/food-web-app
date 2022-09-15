@@ -33,7 +33,7 @@ const useHttp = () => {
             var myHeaders = new Headers();
 
             /* It's making a request to the API using the config object. */
-            const response = await fetch(process.env.REACT_APP_API_URL + config.path, {
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL + config.path, {
                 method: config.method ? config.method : 'GET',
                 headers: config.headers ? config.headers : myHeaders,
                 body: config.body ? JSON.stringify(config.body) : null

@@ -48,7 +48,6 @@ const OptionSelected = ({
             >
                 {op2}
             </Button>
-
         </div>
     )
 }

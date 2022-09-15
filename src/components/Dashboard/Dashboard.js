@@ -11,8 +11,6 @@ import ListDish from "../ListDish/ListDish";
 /* Importing the Loading component from the Loading.js file. */
 import Loading from '../Loading/Loading'
 
-import DishesJson from '../../mocks/dishes.json'
-
 /* Importing the DontKnowWhatEat component from the DontKnowWhatEat.js file. */
 import DontKnowWhatEat from '../DontKnowWhatEat/DontKnowWhatEat'
 
@@ -23,24 +21,37 @@ const Dashboard = () => {
         error,
         requestData } = useHttp();
 
+    /* this variable will save all dishes */
     const [dishes, setDishes] = useState([])
 
+    /* this variable will save al dished with preferences */
     const [preferences, setPreferences] = useState([])
 
+    /* process the data response when the fetch dishes is completed  */
     const dishesDataResponse = (response) => {
+
+        /* This is a validation to check if the response is success. */
         if (!response.success) {
             return;
         }
-        setDishes(response)
+
+        /* save the dishes database in dishes variable */
+        setDishes(response.dishes)
+
+        /* in the first opportunity save the dishes in preferences variable 
+        to show in the first change all dishes */
+        setPreferences(response.dishes)
     }
 
+    /* this function will call the endpoint '/dish/get-all-dishes' to get al dishes in the database  */
     const fetchDishes = () => {
         requestData({
             method: 'GET',
-            path: ''
+            path: '/dish/get-all-dishes'
         }, dishesDataResponse)
     }
 
+    /* this function will filter dishes with your preferences */
     const onChangeValuesDishes = (preferencesParameters) => {
 
         const resultWithPreferencesParameters = dishes.filter(dish =>
@@ -51,12 +62,9 @@ const Dashboard = () => {
         setPreferences(resultWithPreferencesParameters)
     }
 
+    /* This is a hook that is called after the component is mounted. */
     useEffect(() => {
-        //fetchDishes();
-        setDishes(DishesJson?.results)
-
-        setPreferences(DishesJson.results)
-
+        fetchDishes();
     }, [])
 
     return (
