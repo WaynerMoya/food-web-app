@@ -123,7 +123,7 @@ const ChoiceDish = ({
                     <Step key={item.title} title={item.title} />
                 ))}
             </Steps>
-            <div className="steps-content">{steps[current]?.content}</div>
+            {steps[current]?.content}
             <div className="steps-action">
                 {current > 0 && (
                     <Button

@@ -4,6 +4,7 @@ import React from "react";
 /* Importing the Button component from the antd library. */
 import { Button } from "antd";
 
+import './OptionSelected.css'
 
 /**
  * This function is a component that is responsible for showing the options that the user can choose,

@@ -63,7 +63,7 @@ const DontKnowWhatEat = ({ onChangeValuesDishes }) => {
                 closable={false}
             />
 
-            <Modal title="Dishes Recommendation" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title="Dishes Recommendation" open={isModalOpen} footer={null} onCancel={handleCancel}>
                 <ChoiceDish onChangeValuesDishes={onChangeValuesDishes} handleCloseModal={handleCancel} />
             </Modal>
         </div>

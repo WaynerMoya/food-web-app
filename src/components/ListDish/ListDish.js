@@ -15,7 +15,7 @@ const ListDish = ({ dishes }) => {
     /* Mapping the dishes array to Dish components. */
     const renderedDishes = dishes.length > 0 ? dishes.map((dish, index) => {
         return (
-            <Col key={index} span={6} className="col-dish">
+            <Col key={index} md={6} xs={24} className="col-dish">
                 <Dish dish={dish} />
             </Col>
         )

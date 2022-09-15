@@ -15,7 +15,7 @@ const Dish = ({ dish }) => {
         <Card
             className='cart-dish'
             hoverable
-            style={{ width: '100%', padding: 20 }}
+            style={{ width: '100%', padding: 20, height: '100%' }}
             cover={<img alt="dish-logo" src={dish.image} />}
         >
             <Meta
