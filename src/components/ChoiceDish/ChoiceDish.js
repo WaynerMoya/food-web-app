@@ -46,7 +46,15 @@ const ChoiceDish = ({
      * @param e - the event object
      */
     const onChangeOption = (e) => {
-        setOptionSelected(prev => ({ ...prev, [e.title]: e.value }))
+
+        /* create a variable to put all options selected by user */
+        const options = optionSelected
+
+        /* added a new field into options selected temporal */
+        options[e.title] = e.value
+
+        /* change the value of option selected with the options variable created before */
+        setOptionSelected(options)
     }
 
     const onHandleSearchDishes = () => {
@@ -64,6 +72,9 @@ const ChoiceDish = ({
         /* when the modal close in the case the user click the button to the current page in 0, because 
         whe the user enter again will see the first page on the last onw */
         setCurrent(0)
+
+        /* clear the preferences too */
+        setOptionSelected({})
     }
 
     const steps = [

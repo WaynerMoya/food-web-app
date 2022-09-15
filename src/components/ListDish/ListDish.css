@@ -9,4 +9,5 @@
 .sorry-message{
     justify-content: center;
     margin : 20px;
+    height :  calc(100vh - 380px);
 }
