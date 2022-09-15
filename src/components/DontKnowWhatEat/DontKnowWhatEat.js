@@ -71,4 +71,5 @@ const DontKnowWhatEat = ({ onChangeValuesDishes }) => {
 
 }
 
+/* Exporting the component DontKnowWhatEat. */
 export default DontKnowWhatEat;
